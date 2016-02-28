@@ -18,6 +18,8 @@
 @interface MAKThreadViewController ()
 
 @property (nonatomic, strong) MAKThreadInfo *info;
+@property (nonatomic, strong) NSMutableArray *imageURLs;
+@property (nonatomic, strong) NSCache *imageCache;
 
 @end
 
@@ -26,21 +28,22 @@
 - (void)viewDidLoad
 {
 	[super viewDidLoad];
-	
-	// Uncomment the following line to preserve selection between presentations.
-	// self.clearsSelectionOnViewWillAppear = NO;
-	
-	// Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-	// self.navigationItem.rightBarButtonItem = self.editButtonItem;
+	self.imageCache = [NSCache new];
 	[self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([MAKThreadPostCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([MAKThreadPostCell class])];
 	self.tableView.rowHeight = UITableViewAutomaticDimension;
 	self.tableView.estimatedRowHeight = 107;
-	
+	self.imageURLs = [NSMutableArray new];
 	__block typeof(self) bself = self;
 	NSURL *url = [[NSURL URLWithString:FourChanBaseURL] URLByAppendingPathComponent:[NSString stringWithFormat:GetThreadAPI, self.boardName, (long long)self.threadNumber]];
 	M2DAPIRequest *r = [M2DAPIRequest GETRequest:url];
 	[r whenSucceeded:^(M2DAPIRequest *request, NSDictionary *httpHeaderFields, id parsedObject) {
 		bself.info = [MAKThreadInfo modelObjectWithDictionary:parsedObject];
+		for (MAKPost *p in bself.info.posts) {
+			if (p.tim > 0) {
+				NSURL *url = [[NSURL URLWithString:FourChanImageBaseURL] URLByAppendingPathComponent:[NSString stringWithFormat:GetImageAPI, bself.boardName, (long long)p.tim, p.ext]];
+				[bself.imageURLs addObject:url];
+			}
+		}
 		dispatch_async(dispatch_get_main_queue(), ^{
 			[bself.tableView reloadData];
 		});
@@ -55,6 +58,7 @@
 {
 	[super didReceiveMemoryWarning];
 	// Dispose of any resources that can be recreated.
+	[self.imageCache removeAllObjects];
 }
 
 #pragma mark - Table view data source
@@ -72,6 +76,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	MAKThreadPostCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([MAKThreadPostCell class]) forIndexPath:indexPath];
+	cell.thumbnailImageView.tag = 0;
 	
 	// Configure the cell...
 	MAKPost *post = self.info.posts[indexPath.row];
@@ -82,7 +87,6 @@
 		[cell.thumbnailImageView addGestureRecognizer:gesture];
 	}
 	cell.thumbnailImageView.userInteractionEnabled = YES;
-	cell.thumbnailImageView.tag = indexPath.row;
 	NSMutableAttributedString *attributedBodyString = [[NSMutableAttributedString alloc] initWithData:[post.com dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
 	[attributedBodyString addAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:17]} range:NSMakeRange(0, attributedBodyString.length)];
 
@@ -94,6 +98,7 @@
 	}
 	else {
 		cell.imageWidthConstraint.constant = kThreadPostCellImageViewDefaultWidth;
+		cell.thumbnailImageView.tag = [self.imageURLs indexOfObject:[[NSURL URLWithString:FourChanImageBaseURL] URLByAppendingPathComponent:[NSString stringWithFormat:GetImageAPI, self.boardName, (long long)post.tim, post.ext]]];
 	}
 	NSURL *url = [[[NSURL URLWithString:FourChanThumbnailBaseURL] URLByAppendingPathComponent:self.boardName] URLByAppendingPathComponent:[NSString stringWithFormat:GetThumbnailURL, (long long)post.tim]];
 	[cell.thumbnailImageView sd_setImageWithURL:url];
@@ -103,13 +108,14 @@
 
 - (void)showImage:(id)sender
 {
-	__weak typeof(self) bself = self;
-	UITapGestureRecognizer *gesture = (UITapGestureRecognizer *)sender;
 	MAKImageViewerController *viewController = [[MAKImageViewerController alloc] initWithRemoteImageHandler:^NSURLRequest *(NSInteger pageIndex) {
-		MAKPost *post = self.info.posts[gesture.view.tag];
-		NSURL *url = [[NSURL URLWithString:FourChanImageBaseURL] URLByAppendingPathComponent:[NSString stringWithFormat:GetImageAPI, bself.boardName, (long long)post.tim, post.ext]];
+		NSURL *url = self.imageURLs[pageIndex];
 		return [NSURLRequest requestWithURL:url];
-	} numberOfImages:1 direction:RDPagingViewForwardDirectionRight];
+	} numberOfImages:self.imageURLs.count direction:RDPagingViewForwardDirectionRight];
+	viewController.title = self.title;
+	viewController.imageCache = self.imageCache;
+	UITapGestureRecognizer *gesture = (UITapGestureRecognizer *)sender;
+	viewController.currentPageIndex = gesture.view.tag;
 	UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
 	[self presentViewController:navigationController animated:YES completion:nil];
 }

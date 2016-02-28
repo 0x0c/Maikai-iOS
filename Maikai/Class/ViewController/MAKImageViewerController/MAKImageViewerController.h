@@ -10,4 +10,6 @@
 
 @interface MAKImageViewerController : RDImageViewerController
 
+@property (nonatomic, strong) NSCache *imageCache;
+
 @end

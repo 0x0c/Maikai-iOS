@@ -10,8 +10,6 @@
 
 @interface MAKImageViewerController ()
 
-@property (nonatomic, strong) NSCache *imageCache;
-
 @end
 
 @implementation MAKImageViewerController
@@ -19,13 +17,25 @@
 - (void)viewDidLoad
 {
 	[super viewDidLoad];
-	self.imageCache = [NSCache new];
 	self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStylePlain target:self action:@selector(saveImage:)];
 	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(dismiss)];
 	__block typeof(self) bself = self;
-	[self setImageViewConfigurationHandler:^(NSInteger index, RDImageScrollView *imageView) {
-		[bself.imageCache setObject:imageView.image forKey:@"cache"];
+	[self setReuseIdentifierHandler:^NSString *(NSInteger pageIndex) {
+		NSString *identifier = RDImageViewerControllerReuseIdentifierRemoteImage;
+		if ([bself.imageCache objectForKey:[NSString stringWithFormat:@"%ld", (long)pageIndex]]) {
+			identifier = RDImageViewerControllerReuseIdentifierImage;
+		}
+		return identifier;
 	}];
+	[self setImageHandler:^UIImage *(NSInteger pageIndex) {
+		return [bself.imageCache objectForKey:[NSString stringWithFormat:@"%ld", (long)pageIndex]];
+	}];
+	[self setImageViewConfigurationHandler:^(NSInteger pageIndex, RDImageScrollView *imageView) {
+		if (imageView.image) {
+			[bself.imageCache setObject:imageView.image forKey:[NSString stringWithFormat:@"%ld", (long)pageIndex]];
+		}
+	}];
+	self.showPageNumberHud = YES;
 }
 
 - (void)dismiss
@@ -35,7 +45,7 @@
 
 - (void)saveImage:(id)sender
 {
-	UIImageWriteToSavedPhotosAlbum([self.imageCache objectForKey:@"cache"], self, @selector(didFinishToSaveImage:error:contextInfo:), NULL);
+	UIImageWriteToSavedPhotosAlbum([self.imageCache objectForKey:[NSString stringWithFormat:@"%ld", (long)self.currentPageIndex]], self, @selector(didFinishToSaveImage:error:contextInfo:), NULL);
 }
 
 - (void)didFinishToSaveImage:(UIImage *)image error:(NSError *)error contextInfo:(void *)contextInfo

@@ -27,14 +27,9 @@
 - (void)viewDidLoad
 {
 	[super viewDidLoad];
-	
-	// Uncomment the following line to preserve selection between presentations.
-	// self.clearsSelectionOnViewWillAppear = NO;
-	
-	// Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-	// self.navigationItem.rightBarButtonItem = self.editButtonItem;
 	[self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([MAKBoardCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([MAKBoardCell class])];
-	
+	self.tableView.rowHeight = 110;
+
 	if (self.boardName.length > 0) {
 		self.threads = [NSMutableArray new];
 		__block typeof(self) bself = self;
@@ -54,8 +49,12 @@
 		}];
 		[[M2DAPIGatekeeper sharedInstance] sendAsynchronousRequest:r];
 	}
-	
-	self.tableView.rowHeight = 110;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+	[super viewWillAppear:animated];
+	[self.tableView deselectRowAtIndexPath:self.tableView.indexPathForSelectedRow animated:YES];
 }
 
 - (void)didReceiveMemoryWarning

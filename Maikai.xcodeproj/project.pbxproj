@@ -70,6 +70,8 @@
 		E915070D1C82FF3200E80853 /* MAKThreadPostCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MAKThreadPostCell.xib; sourceTree = "<group>"; };
 		E91507111C830B0200E80853 /* MAKImageViewerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAKImageViewerController.h; sourceTree = "<group>"; };
 		E91507121C830B0200E80853 /* MAKImageViewerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAKImageViewerController.m; sourceTree = "<group>"; };
+		E9164DAB1C83295B0001668F /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		E9164DAC1C83295B0001668F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,8 @@
 		18616F09C6CA403327AAE8AC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E9164DAB1C83295B0001668F /* CoreFoundation.framework */,
+				E9164DAC1C83295B0001668F /* Foundation.framework */,
 				6523D42B49B9E4B76CF75C92 /* libPods-Maikai.a */,
 			);
 			name = Frameworks;
@@ -315,6 +319,7 @@
 				TargetAttributes = {
 					E91506BC1C82EB6800E80853 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 3VC35JGS33;
 					};
 				};
 			};
@@ -531,11 +536,14 @@
 			baseConfigurationReference = DF35DE9C3DE730998595A7B1 /* Pods-Maikai.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Maikai/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.akira.matsuda.Maikai;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -544,11 +552,14 @@
 			baseConfigurationReference = 2A1308F5998BE9B5BA7416BD /* Pods-Maikai.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Maikai/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.akira.matsuda.Maikai;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
