@@ -45,7 +45,17 @@
 
 - (void)saveImage:(id)sender
 {
-	UIImageWriteToSavedPhotosAlbum([self.imageCache objectForKey:[NSString stringWithFormat:@"%ld", (long)self.currentPageIndex]], self, @selector(didFinishToSaveImage:error:contextInfo:), NULL);
+	UIImage *image = [self.imageCache objectForKey:[NSString stringWithFormat:@"%ld", (long)self.currentPageIndex]];
+	if (image) {
+		UIImageWriteToSavedPhotosAlbum(image, self, @selector(didFinishToSaveImage:error:contextInfo:), NULL);
+	}
+	else {
+		NSString *title = @"Error";
+		NSString *message = @"Could not load an image.";
+		UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+		[alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+		[self presentViewController:alert animated:YES completion:nil];
+	}
 }
 
 - (void)didFinishToSaveImage:(UIImage *)image error:(NSError *)error contextInfo:(void *)contextInfo
