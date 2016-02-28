@@ -8,6 +8,9 @@
 
 #import "AppDelegate.h"
 #import "M2DAPIGatekeeper.h"
+#import "JGProgressHUD.h"
+#import "JGProgressHUDFadeAnimation.h"
+#import "JGProgressHUDFadeZoomAnimation.h"
 
 @interface AppDelegate () <UISplitViewControllerDelegate>
 
@@ -39,12 +42,18 @@
 	
 	[gatekeeper initializeBlock:^(M2DAPIRequest *request, NSDictionary *params) {
 		dispatch_async(dispatch_get_main_queue(), ^{
-			// Show hud when start request
+			JGProgressHUD *hud = [[JGProgressHUD alloc] initWithStyle:JGProgressHUDStyleDark];
+			hud.interactionType = JGProgressHUDInteractionTypeBlockAllTouches;
+			hud.cornerRadius = 20;
+			hud.animation = [JGProgressHUDFadeZoomAnimation animation];
+			[hud showInView:[[UIApplication sharedApplication].delegate window]];
 		});
 	}];
 	[gatekeeper finalizeBlock:^(M2DAPIRequest *request, NSDictionary *httpHeaderField, id parsedObject) {
 		dispatch_async(dispatch_get_main_queue(), ^{
-			// Dismiss hud when finish request
+			for (JGProgressHUD *hud in [JGProgressHUD allProgressHUDsInView:[[UIApplication sharedApplication].delegate window]]) {
+				[hud dismissAnimated:YES];
+			}
 		});
 	}];
 	

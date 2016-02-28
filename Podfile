@@ -9,6 +9,7 @@ pod 'M2DAPIGatekeeper'
 pod 'SDWebImage'
 pod 'TTTAttributedLabel'
 pod 'RDImageViewerController'
+pod 'JGProgressHUD'
 
 end
 
