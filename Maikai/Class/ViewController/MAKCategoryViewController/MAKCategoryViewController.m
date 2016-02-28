@@ -94,7 +94,6 @@
 					];
 	[self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([MAKCategoryCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([MAKCategoryCell class])];
 	self.tableView.rowHeight = 41;
-	[self.tableView deselectRowAtIndexPath:self.tableView.indexPathForSelectedRow animated:YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated
