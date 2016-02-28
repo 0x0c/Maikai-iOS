@@ -83,7 +83,9 @@
 	}
 	cell.thumbnailImageView.userInteractionEnabled = YES;
 	cell.thumbnailImageView.tag = indexPath.row;
-	NSAttributedString *attributedBodyString = [[NSAttributedString alloc] initWithData:[post.com dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType, NSFontAttributeName : [UIFont systemFontOfSize:17] } documentAttributes:nil error:nil];
+	NSMutableAttributedString *attributedBodyString = [[NSMutableAttributedString alloc] initWithData:[post.com dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
+	[attributedBodyString addAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:17]} range:NSMakeRange(0, attributedBodyString.length)];
+
 	cell.bodyLabel.attributedText = attributedBodyString;
 	[cell.bodyLabel sizeToFit];
 	

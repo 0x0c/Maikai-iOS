@@ -35,23 +35,25 @@
 	// self.navigationItem.rightBarButtonItem = self.editButtonItem;
 	[self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([MAKBoardCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([MAKBoardCell class])];
 	
-	self.threads = [NSMutableArray new];
-	__block typeof(self) bself = self;
-	NSURL *url = [[[NSURL URLWithString:FourChanBaseURL] URLByAppendingPathComponent:self.boardName] URLByAppendingPathComponent:GetCatalogAPI];
-	M2DAPIRequest *r = [M2DAPIRequest GETRequest:url];
-	[r whenSucceeded:^(M2DAPIRequest *request, NSDictionary *httpHeaderFields, id parsedObject) {
-		for (NSDictionary *d in parsedObject) {
-			MAKBoardInfo *info = [MAKBoardInfo modelObjectWithDictionary:d];
-			[bself.threads addObjectsFromArray:info.threads];
-		}
-		dispatch_async(dispatch_get_main_queue(), ^{
-			[bself.tableView reloadData];
-		});
-	}];
-	[r whenFailed:^(M2DAPIRequest *request, NSDictionary *httpHeaderFields, id parsedObject, NSError *error) {
-		NSLog(@"%@", [error description]);
-	}];
-	[[M2DAPIGatekeeper sharedInstance] sendAsynchronousRequest:r];
+	if (self.boardName.length > 0) {
+		self.threads = [NSMutableArray new];
+		__block typeof(self) bself = self;
+		NSURL *url = [[[NSURL URLWithString:FourChanBaseURL] URLByAppendingPathComponent:self.boardName] URLByAppendingPathComponent:GetCatalogAPI];
+		M2DAPIRequest *r = [M2DAPIRequest GETRequest:url];
+		[r whenSucceeded:^(M2DAPIRequest *request, NSDictionary *httpHeaderFields, id parsedObject) {
+			for (NSDictionary *d in parsedObject) {
+				MAKBoardInfo *info = [MAKBoardInfo modelObjectWithDictionary:d];
+				[bself.threads addObjectsFromArray:info.threads];
+			}
+			dispatch_async(dispatch_get_main_queue(), ^{
+				[bself.tableView reloadData];
+			});
+		}];
+		[r whenFailed:^(M2DAPIRequest *request, NSDictionary *httpHeaderFields, id parsedObject, NSError *error) {
+			NSLog(@"%@", [error description]);
+		}];
+		[[M2DAPIGatekeeper sharedInstance] sendAsynchronousRequest:r];
+	}
 	
 	self.tableView.rowHeight = 110;
 }

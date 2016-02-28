@@ -26,7 +26,8 @@
 	UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
 	navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem;
 	splitViewController.delegate = self;
-	
+	splitViewController.preferredDisplayMode = UISplitViewControllerDisplayModeAllVisible;
+
 	M2DAPIGatekeeper *gatekeeper = [M2DAPIGatekeeper sharedInstance];
 	[gatekeeper parseBlock:^id(NSData *data, NSError *__autoreleasing *error) {
 		id result = nil;
