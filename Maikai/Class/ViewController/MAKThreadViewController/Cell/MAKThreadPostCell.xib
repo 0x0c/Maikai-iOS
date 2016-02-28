@@ -64,6 +64,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="bodyLabel" destination="Hi3-E0-uCw" id="lBh-fs-ahX"/>
+                <outlet property="imageWidthConstraint" destination="GII-Dp-TcB" id="3lN-Ae-Xm0"/>
                 <outlet property="nameLabel" destination="1R8-sX-mDA" id="B7o-oZ-Q0A"/>
                 <outlet property="thumbnailImageView" destination="jGG-11-WZl" id="bSZ-ze-Xpm"/>
             </connections>
