@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="107" id="KGk-i7-Jjw" customClass="MAKThreadPostCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="107"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="106"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jGG-11-WZl">
+                        <rect key="frame" x="0.0" y="0.0" width="106" height="106"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="106" id="XkA-F0-u97"/>
+                            <constraint firstAttribute="height" constant="106" id="oyk-lw-uCc"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1R8-sX-mDA">
+                        <rect key="frame" x="114" y="8" width="198" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="Dnw-yj-cmf"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="body" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hi3-E0-uCw" customClass="TTTAttributedLabel">
+                        <rect key="frame" x="114" y="37" width="198" height="61"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="61" id="EdG-HP-BtD"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="1R8-sX-mDA" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="9Vp-be-obU"/>
+                    <constraint firstItem="Hi3-E0-uCw" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" priority="751" id="CWL-Bd-MjA"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="jGG-11-WZl" secondAttribute="bottom" priority="250" constant="-8" id="FEf-dh-1iU"/>
+                    <constraint firstItem="1R8-sX-mDA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Mbn-xf-7p7"/>
+                    <constraint firstItem="jGG-11-WZl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="PUi-Mp-9d0"/>
+                    <constraint firstItem="Hi3-E0-uCw" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="QEW-BE-R6A"/>
+                    <constraint firstItem="Hi3-E0-uCw" firstAttribute="top" secondItem="1R8-sX-mDA" secondAttribute="bottom" constant="8" id="ggD-zB-muw"/>
+                    <constraint firstItem="1R8-sX-mDA" firstAttribute="leading" secondItem="jGG-11-WZl" secondAttribute="trailing" constant="8" id="h1O-LP-7a7"/>
+                    <constraint firstItem="Hi3-E0-uCw" firstAttribute="leading" secondItem="jGG-11-WZl" secondAttribute="trailing" constant="8" id="tam-3Q-Gkc"/>
+                    <constraint firstItem="jGG-11-WZl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="zx7-5L-8dm"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="bodyLabel" destination="Hi3-E0-uCw" id="lBh-fs-ahX"/>
+                <outlet property="imageWidthConstraint" destination="XkA-F0-u97" id="jQX-UL-ho9"/>
+                <outlet property="nameLabel" destination="1R8-sX-mDA" id="B7o-oZ-Q0A"/>
+                <outlet property="thumbnailImageView" destination="jGG-11-WZl" id="bSZ-ze-Xpm"/>
+            </connections>
+            <point key="canvasLocation" x="631" y="526.5"/>
+        </tableViewCell>
+    </objects>
+</document>

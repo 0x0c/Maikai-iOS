@@ -7,28 +7,69 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5777EDEAAA4032E6F2CDAE53 /* libPods-Maikai.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6523D42B49B9E4B76CF75C92 /* libPods-Maikai.a */; };
 		E91506C21C82EB6800E80853 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E91506C11C82EB6800E80853 /* main.m */; };
 		E91506C51C82EB6800E80853 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E91506C41C82EB6800E80853 /* AppDelegate.m */; };
-		E91506C81C82EB6800E80853 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E91506C71C82EB6800E80853 /* MasterViewController.m */; };
-		E91506CB1C82EB6800E80853 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E91506CA1C82EB6800E80853 /* DetailViewController.m */; };
 		E91506CE1C82EB6800E80853 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E91506CC1C82EB6800E80853 /* Main.storyboard */; };
 		E91506D01C82EB6800E80853 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E91506CF1C82EB6800E80853 /* Assets.xcassets */; };
 		E91506D31C82EB6800E80853 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E91506D11C82EB6800E80853 /* LaunchScreen.storyboard */; };
+		E91506E41C82ECBF00E80853 /* MAKCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E91506E31C82ECBF00E80853 /* MAKCategoryViewController.m */; };
+		E91506E91C82EE7600E80853 /* MAKCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E91506E71C82EE7600E80853 /* MAKCategoryCell.m */; };
+		E91506EA1C82EE7600E80853 /* MAKCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E91506E81C82EE7600E80853 /* MAKCategoryCell.xib */; };
+		E91506ED1C82F01600E80853 /* MAKBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E91506EC1C82F01600E80853 /* MAKBoardViewController.m */; };
+		E91506F71C82F1ED00E80853 /* MAKBoardInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E91506F21C82F1ED00E80853 /* MAKBoardInfo.m */; };
+		E91506F81C82F1ED00E80853 /* MAKLastReplies.m in Sources */ = {isa = PBXBuildFile; fileRef = E91506F41C82F1ED00E80853 /* MAKLastReplies.m */; };
+		E91506F91C82F1ED00E80853 /* MAKThread.m in Sources */ = {isa = PBXBuildFile; fileRef = E91506F61C82F1ED00E80853 /* MAKThread.m */; };
+		E91506FE1C82F61F00E80853 /* MAKBoardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E91506FC1C82F61F00E80853 /* MAKBoardCell.m */; };
+		E91506FF1C82F61F00E80853 /* MAKBoardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E91506FD1C82F61F00E80853 /* MAKBoardCell.xib */; };
+		E91507021C82FB9D00E80853 /* MAKThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E91507011C82FB9D00E80853 /* MAKThreadViewController.m */; };
+		E91507081C82FE8000E80853 /* MAKPost.m in Sources */ = {isa = PBXBuildFile; fileRef = E91507051C82FE8000E80853 /* MAKPost.m */; };
+		E91507091C82FE8000E80853 /* MAKThreadInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E91507071C82FE8000E80853 /* MAKThreadInfo.m */; };
+		E915070E1C82FF3200E80853 /* MAKThreadPostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E915070C1C82FF3200E80853 /* MAKThreadPostCell.m */; };
+		E915070F1C82FF3200E80853 /* MAKThreadPostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E915070D1C82FF3200E80853 /* MAKThreadPostCell.xib */; };
+		E91507131C830B0200E80853 /* MAKImageViewerController.m in Sources */ = {isa = PBXBuildFile; fileRef = E91507121C830B0200E80853 /* MAKImageViewerController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A1308F5998BE9B5BA7416BD /* Pods-Maikai.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Maikai.release.xcconfig"; path = "Pods/Target Support Files/Pods-Maikai/Pods-Maikai.release.xcconfig"; sourceTree = "<group>"; };
+		6523D42B49B9E4B76CF75C92 /* libPods-Maikai.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Maikai.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF35DE9C3DE730998595A7B1 /* Pods-Maikai.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Maikai.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Maikai/Pods-Maikai.debug.xcconfig"; sourceTree = "<group>"; };
 		E91506BD1C82EB6800E80853 /* Maikai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Maikai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E91506C11C82EB6800E80853 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E91506C31C82EB6800E80853 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E91506C41C82EB6800E80853 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E91506C61C82EB6800E80853 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		E91506C71C82EB6800E80853 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		E91506C91C82EB6800E80853 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		E91506CA1C82EB6800E80853 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		E91506CD1C82EB6800E80853 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E91506CF1C82EB6800E80853 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E91506D21C82EB6800E80853 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E91506D41C82EB6800E80853 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E91506E21C82ECBF00E80853 /* MAKCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAKCategoryViewController.h; sourceTree = "<group>"; };
+		E91506E31C82ECBF00E80853 /* MAKCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAKCategoryViewController.m; sourceTree = "<group>"; };
+		E91506E61C82EE7600E80853 /* MAKCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAKCategoryCell.h; sourceTree = "<group>"; };
+		E91506E71C82EE7600E80853 /* MAKCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAKCategoryCell.m; sourceTree = "<group>"; };
+		E91506E81C82EE7600E80853 /* MAKCategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MAKCategoryCell.xib; sourceTree = "<group>"; };
+		E91506EB1C82F01600E80853 /* MAKBoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAKBoardViewController.h; sourceTree = "<group>"; };
+		E91506EC1C82F01600E80853 /* MAKBoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAKBoardViewController.m; sourceTree = "<group>"; };
+		E91506EE1C82F0D700E80853 /* URL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URL.h; sourceTree = "<group>"; };
+		E91506F11C82F1ED00E80853 /* MAKBoardInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAKBoardInfo.h; sourceTree = "<group>"; };
+		E91506F21C82F1ED00E80853 /* MAKBoardInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAKBoardInfo.m; sourceTree = "<group>"; };
+		E91506F31C82F1ED00E80853 /* MAKLastReplies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAKLastReplies.h; sourceTree = "<group>"; };
+		E91506F41C82F1ED00E80853 /* MAKLastReplies.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAKLastReplies.m; sourceTree = "<group>"; };
+		E91506F51C82F1ED00E80853 /* MAKThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAKThread.h; sourceTree = "<group>"; };
+		E91506F61C82F1ED00E80853 /* MAKThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAKThread.m; sourceTree = "<group>"; };
+		E91506FB1C82F61F00E80853 /* MAKBoardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAKBoardCell.h; sourceTree = "<group>"; };
+		E91506FC1C82F61F00E80853 /* MAKBoardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAKBoardCell.m; sourceTree = "<group>"; };
+		E91506FD1C82F61F00E80853 /* MAKBoardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MAKBoardCell.xib; sourceTree = "<group>"; };
+		E91507001C82FB9D00E80853 /* MAKThreadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAKThreadViewController.h; sourceTree = "<group>"; };
+		E91507011C82FB9D00E80853 /* MAKThreadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAKThreadViewController.m; sourceTree = "<group>"; };
+		E91507041C82FE8000E80853 /* MAKPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAKPost.h; sourceTree = "<group>"; };
+		E91507051C82FE8000E80853 /* MAKPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAKPost.m; sourceTree = "<group>"; };
+		E91507061C82FE8000E80853 /* MAKThreadInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAKThreadInfo.h; sourceTree = "<group>"; };
+		E91507071C82FE8000E80853 /* MAKThreadInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAKThreadInfo.m; sourceTree = "<group>"; };
+		E915070B1C82FF3200E80853 /* MAKThreadPostCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAKThreadPostCell.h; sourceTree = "<group>"; };
+		E915070C1C82FF3200E80853 /* MAKThreadPostCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAKThreadPostCell.m; sourceTree = "<group>"; };
+		E915070D1C82FF3200E80853 /* MAKThreadPostCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MAKThreadPostCell.xib; sourceTree = "<group>"; };
+		E91507111C830B0200E80853 /* MAKImageViewerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAKImageViewerController.h; sourceTree = "<group>"; };
+		E91507121C830B0200E80853 /* MAKImageViewerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAKImageViewerController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,17 +77,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5777EDEAAA4032E6F2CDAE53 /* libPods-Maikai.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18616F09C6CA403327AAE8AC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6523D42B49B9E4B76CF75C92 /* libPods-Maikai.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E91506B41C82EB6800E80853 = {
 			isa = PBXGroup;
 			children = (
 				E91506BF1C82EB6800E80853 /* Maikai */,
 				E91506BE1C82EB6800E80853 /* Products */,
+				EFAE4EF09E5CB758B19B6BB0 /* Pods */,
+				18616F09C6CA403327AAE8AC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,16 +113,16 @@
 		E91506BF1C82EB6800E80853 /* Maikai */ = {
 			isa = PBXGroup;
 			children = (
+				E91506EE1C82F0D700E80853 /* URL.h */,
 				E91506C31C82EB6800E80853 /* AppDelegate.h */,
 				E91506C41C82EB6800E80853 /* AppDelegate.m */,
-				E91506C61C82EB6800E80853 /* MasterViewController.h */,
-				E91506C71C82EB6800E80853 /* MasterViewController.m */,
-				E91506C91C82EB6800E80853 /* DetailViewController.h */,
-				E91506CA1C82EB6800E80853 /* DetailViewController.m */,
-				E91506CC1C82EB6800E80853 /* Main.storyboard */,
 				E91506CF1C82EB6800E80853 /* Assets.xcassets */,
-				E91506D11C82EB6800E80853 /* LaunchScreen.storyboard */,
+				E91506DA1C82EBF400E80853 /* Class */,
+				E91506DD1C82EBFA00E80853 /* Library */,
+				E91506DE1C82EC0400E80853 /* Resource */,
 				E91506D41C82EB6800E80853 /* Info.plist */,
+				E91506D11C82EB6800E80853 /* LaunchScreen.storyboard */,
+				E91506CC1C82EB6800E80853 /* Main.storyboard */,
 				E91506C01C82EB6800E80853 /* Supporting Files */,
 			);
 			path = Maikai;
@@ -84,6 +136,151 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		E91506DA1C82EBF400E80853 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				E91506DB1C82EBF400E80853 /* Model */,
+				E91506DC1C82EBF400E80853 /* ViewController */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		E91506DB1C82EBF400E80853 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E91507031C82FE8000E80853 /* MAKThreadInfo */,
+				E91506EF1C82F1ED00E80853 /* MAKBoardInfo */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E91506DC1C82EBF400E80853 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E91507101C830AF700E80853 /* MAKImageViewerController */,
+				E91506DF1C82ECB200E80853 /* MAKBoardViewController */,
+				E91506E01C82ECB200E80853 /* MAKCategoryViewController */,
+				E91506E11C82ECB200E80853 /* MAKThreadViewController */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		E91506DD1C82EBFA00E80853 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		E91506DE1C82EC0400E80853 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		E91506DF1C82ECB200E80853 /* MAKBoardViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E91506FA1C82F5C800E80853 /* Cell */,
+				E91506EB1C82F01600E80853 /* MAKBoardViewController.h */,
+				E91506EC1C82F01600E80853 /* MAKBoardViewController.m */,
+			);
+			path = MAKBoardViewController;
+			sourceTree = "<group>";
+		};
+		E91506E01C82ECB200E80853 /* MAKCategoryViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E91506E51C82EE5B00E80853 /* Cell */,
+				E91506E21C82ECBF00E80853 /* MAKCategoryViewController.h */,
+				E91506E31C82ECBF00E80853 /* MAKCategoryViewController.m */,
+			);
+			path = MAKCategoryViewController;
+			sourceTree = "<group>";
+		};
+		E91506E11C82ECB200E80853 /* MAKThreadViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E915070A1C82FF1A00E80853 /* Cell */,
+				E91507001C82FB9D00E80853 /* MAKThreadViewController.h */,
+				E91507011C82FB9D00E80853 /* MAKThreadViewController.m */,
+			);
+			path = MAKThreadViewController;
+			sourceTree = "<group>";
+		};
+		E91506E51C82EE5B00E80853 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E91506E61C82EE7600E80853 /* MAKCategoryCell.h */,
+				E91506E71C82EE7600E80853 /* MAKCategoryCell.m */,
+				E91506E81C82EE7600E80853 /* MAKCategoryCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		E91506EF1C82F1ED00E80853 /* MAKBoardInfo */ = {
+			isa = PBXGroup;
+			children = (
+				E91506F11C82F1ED00E80853 /* MAKBoardInfo.h */,
+				E91506F21C82F1ED00E80853 /* MAKBoardInfo.m */,
+				E91506F31C82F1ED00E80853 /* MAKLastReplies.h */,
+				E91506F41C82F1ED00E80853 /* MAKLastReplies.m */,
+				E91506F51C82F1ED00E80853 /* MAKThread.h */,
+				E91506F61C82F1ED00E80853 /* MAKThread.m */,
+			);
+			path = MAKBoardInfo;
+			sourceTree = "<group>";
+		};
+		E91506FA1C82F5C800E80853 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E91506FB1C82F61F00E80853 /* MAKBoardCell.h */,
+				E91506FC1C82F61F00E80853 /* MAKBoardCell.m */,
+				E91506FD1C82F61F00E80853 /* MAKBoardCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		E91507031C82FE8000E80853 /* MAKThreadInfo */ = {
+			isa = PBXGroup;
+			children = (
+				E91507041C82FE8000E80853 /* MAKPost.h */,
+				E91507051C82FE8000E80853 /* MAKPost.m */,
+				E91507061C82FE8000E80853 /* MAKThreadInfo.h */,
+				E91507071C82FE8000E80853 /* MAKThreadInfo.m */,
+			);
+			path = MAKThreadInfo;
+			sourceTree = "<group>";
+		};
+		E915070A1C82FF1A00E80853 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E915070B1C82FF3200E80853 /* MAKThreadPostCell.h */,
+				E915070C1C82FF3200E80853 /* MAKThreadPostCell.m */,
+				E915070D1C82FF3200E80853 /* MAKThreadPostCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		E91507101C830AF700E80853 /* MAKImageViewerController */ = {
+			isa = PBXGroup;
+			children = (
+				E91507111C830B0200E80853 /* MAKImageViewerController.h */,
+				E91507121C830B0200E80853 /* MAKImageViewerController.m */,
+			);
+			path = MAKImageViewerController;
+			sourceTree = "<group>";
+		};
+		EFAE4EF09E5CB758B19B6BB0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DF35DE9C3DE730998595A7B1 /* Pods-Maikai.debug.xcconfig */,
+				2A1308F5998BE9B5BA7416BD /* Pods-Maikai.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -91,9 +288,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E91506D71C82EB6800E80853 /* Build configuration list for PBXNativeTarget "Maikai" */;
 			buildPhases = (
+				C8300A467E91E3BC90B5ECAC /* Check Pods Manifest.lock */,
 				E91506B91C82EB6800E80853 /* Sources */,
 				E91506BA1C82EB6800E80853 /* Frameworks */,
 				E91506BB1C82EB6800E80853 /* Resources */,
+				A937352555BD42E78B88D901 /* Embed Pods Frameworks */,
+				ABF97DD4BAEC0A9E9C467A4F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -142,22 +342,83 @@
 			buildActionMask = 2147483647;
 			files = (
 				E91506D31C82EB6800E80853 /* LaunchScreen.storyboard in Resources */,
+				E91506FF1C82F61F00E80853 /* MAKBoardCell.xib in Resources */,
 				E91506D01C82EB6800E80853 /* Assets.xcassets in Resources */,
+				E915070F1C82FF3200E80853 /* MAKThreadPostCell.xib in Resources */,
 				E91506CE1C82EB6800E80853 /* Main.storyboard in Resources */,
+				E91506EA1C82EE7600E80853 /* MAKCategoryCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A937352555BD42E78B88D901 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Maikai/Pods-Maikai-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ABF97DD4BAEC0A9E9C467A4F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Maikai/Pods-Maikai-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C8300A467E91E3BC90B5ECAC /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E91506B91C82EB6800E80853 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E91507021C82FB9D00E80853 /* MAKThreadViewController.m in Sources */,
+				E915070E1C82FF3200E80853 /* MAKThreadPostCell.m in Sources */,
+				E91506FE1C82F61F00E80853 /* MAKBoardCell.m in Sources */,
+				E91506F81C82F1ED00E80853 /* MAKLastReplies.m in Sources */,
+				E91507091C82FE8000E80853 /* MAKThreadInfo.m in Sources */,
+				E91506F71C82F1ED00E80853 /* MAKBoardInfo.m in Sources */,
 				E91506C51C82EB6800E80853 /* AppDelegate.m in Sources */,
-				E91506C81C82EB6800E80853 /* MasterViewController.m in Sources */,
+				E91506F91C82F1ED00E80853 /* MAKThread.m in Sources */,
 				E91506C21C82EB6800E80853 /* main.m in Sources */,
-				E91506CB1C82EB6800E80853 /* DetailViewController.m in Sources */,
+				E91507081C82FE8000E80853 /* MAKPost.m in Sources */,
+				E91507131C830B0200E80853 /* MAKImageViewerController.m in Sources */,
+				E91506ED1C82F01600E80853 /* MAKBoardViewController.m in Sources */,
+				E91506E41C82ECBF00E80853 /* MAKCategoryViewController.m in Sources */,
+				E91506E91C82EE7600E80853 /* MAKCategoryCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +528,7 @@
 		};
 		E91506D81C82EB6800E80853 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF35DE9C3DE730998595A7B1 /* Pods-Maikai.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Maikai/Info.plist;
@@ -278,6 +540,7 @@
 		};
 		E91506D91C82EB6800E80853 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A1308F5998BE9B5BA7416BD /* Pods-Maikai.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Maikai/Info.plist;
@@ -306,6 +569,7 @@
 				E91506D91C82EB6800E80853 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

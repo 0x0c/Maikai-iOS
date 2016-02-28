@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "DetailViewController.h"
+#import "M2DAPIGatekeeper.h"
 
 @interface AppDelegate () <UISplitViewControllerDelegate>
 
@@ -16,12 +16,38 @@
 @implementation AppDelegate
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
 	// Override point for customization after application launch.
 	UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
 	UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
 	navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem;
 	splitViewController.delegate = self;
+	
+	M2DAPIGatekeeper *gatekeeper = [M2DAPIGatekeeper sharedInstance];
+	[gatekeeper parseBlock:^id(NSData *data, NSError *__autoreleasing *error) {
+		id result = nil;
+		if (*error == nil) {
+			result = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:error];
+		}
+		return result;
+	}];
+	
+	[gatekeeper resultConditionBlock:^BOOL(M2DAPIRequest *request, NSURLResponse *response, id parsedObject, NSError *__autoreleasing *error) {
+		return [(NSHTTPURLResponse *)response statusCode] == 200;
+	}];
+	
+	[gatekeeper initializeBlock:^(M2DAPIRequest *request, NSDictionary *params) {
+		dispatch_async(dispatch_get_main_queue(), ^{
+			// Show hud when start request
+		});
+	}];
+	[gatekeeper finalizeBlock:^(M2DAPIRequest *request, NSDictionary *httpHeaderField, id parsedObject) {
+		dispatch_async(dispatch_get_main_queue(), ^{
+			// Dismiss hud when finish request
+		});
+	}];
+	
 	return YES;
 }
 
@@ -49,13 +75,9 @@
 
 #pragma mark - Split view
 
-- (BOOL)splitViewController:(UISplitViewController *)splitViewController collapseSecondaryViewController:(UIViewController *)secondaryViewController ontoPrimaryViewController:(UIViewController *)primaryViewController {
-    if ([secondaryViewController isKindOfClass:[UINavigationController class]] && [[(UINavigationController *)secondaryViewController topViewController] isKindOfClass:[DetailViewController class]] && ([(DetailViewController *)[(UINavigationController *)secondaryViewController topViewController] detailItem] == nil)) {
-        // Return YES to indicate that we have handled the collapse by doing nothing; the secondary controller will be discarded.
-        return YES;
-    } else {
-        return NO;
-    }
+- (BOOL)splitViewController:(UISplitViewController *)splitViewController collapseSecondaryViewController:(UIViewController *)secondaryViewController ontoPrimaryViewController:(UIViewController *)primaryViewController
+{
+	return YES;
 }
 
 @end
